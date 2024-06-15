@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <h3><a href="Home.html">العودة إلى الصفحة الرئيسية</a></h3>    
+            <img src="imgs/لوغو الجمعية مفرغ دقة عالية-01.png" />
+        </header>
+
+        <div class="title" id="title" name="title">إنشاء الإحصائيات</div>
+
+        <div class="container">
+
+            <div class="text">
+                <h3>ما هي الإحصائيات :</h3>
+                <p class="sec-text">
+                    يقصد بالإحصائية : تفصيل البيانات
+                    <br>وهي على نوعين 
+                    <br>1. إحصائية أسر
+                    <br>2. إحصائية أفراد
+                    <br>
+                    <br>وبعضها يكون عامّاً (مجرد تفصيل بيانات أسر أو أفراد محددين )
+                    <br>وبعضها يكون مخصّصاً (عدد وأسماء الأفراد الذين تتراوح أعمارهم بين 4_10 سنوات) ، (الأسر التي لديها احتياج شادر) ، (الأفراد الذين يدرسون ضمن المرحلة الأساسية) ، (النساء الذين لديهم عمل) 
+                    <br>
+                    <br>ويكون الفرق بين إحصائية الأسر وإحصائية الأفراد بالداتا المستخدمة
+                    <br>والفرق بين الإحصائية العامّة والمخصصة بالفرز
+                </p>
+            </div>
+
+            <div class="text">
+                <h3>إحصائية الأسر</h3>
+                <p class="sec-text">
+                    الداتا المستخدمة: Didstribution أو Original data بحسب البيانات المطلوبة 
+                    <br>نقوم بالفرز على البيانات المطلوبة بحسب عمودها
+                    <br>ننسخ البيانات ونلصقها بملف إكسل جديد ، نحفظه ونرسله للجهة المعنية
+                    <br>
+                    <br>مثال: نريد إحصائية تفصيل الأسر التي بحاجة شادر
+                    <ul class="ulInner">
+                        <li>نذهب لداتا Original data</li>
+                        <li>نقوم بالفرز على الأسر المقبولة</li>
+                        <li>ثم نقوم بالفرز على احتياج أو نعم في عمود شادر</li>
+                        <li>ننسخ أرقام الطلبات وأسماءها لملف إكسل آخر</li>
+                    </ul>
+                </p>
+
+                <div class="container">
+                   إحصائية أسر أولوية 4 + 3 من غير الفقر الشديد
+                    <img src="imgs/statistic-06.jfif" alt="statistic">
+                </div>
+            </div>
+            
+            <div class="text">
+                <h3>إحصائية أفراد</h3>
+                <p class="sec-text">
+                    نفتح داتا Families Details For Orphans الموجودة ضمن المسار "Beneficiaries Data (\\DC)\Original data\"
+                    <br>نلصق أرقام الطلبات المقبولة أو المراد تفصيل أفرادها من Original data أو من Didstribution إلى العمود c في صفحة from data في داتا Families Details For Orphans
+                    
+                    <div class="container">
+                        <img src="imgs/statistic-01.png" alt="from family details">
+                    </div>
+                    
+                    <br>ثم نفتح صفحة "للتوزيع" ونقوم بتحديثها ليظهر لنا بيانات الطلبات التي تم لصقها
+                    <br>نقوم بالفرز على موجود ليظهر لنا كل الأفراد الموجودون من أرقام الطلبات المحددة
+                    <br>كما يمكننا الفرز بحسب البيانات المطلوبة (عمر ، حالة صحية ، دراسة ، عمل .. ) ضمن أعمدتها المحددة ليظهر لنا الأفراد المرادين
+                    <br>ننسخ البيانات المطلوبة لملف آخر لإرسالها              
+                    
+                    <div class="container">
+                        <img src="imgs/statistic-02.png" alt="from family details">
+                    </div>
+                    
+                    <br>لمعرفة عدد الأفراد عن كل رقم طلب على حدى نقوم بالآتي
+                    <br>ننسخ رقم الطلب من صفحة للتوزيع
+                    <br>نلصقها في عمودي "رقم الطلب مع تكرار" + "رقم الطلب بدون تكرار" في صفحة "عداد"
+                    <br>نحدد عمود "رقم الطلب بدون تكرار" ثم نقوم بحذف المكرر من خلال الدخول على Data الصفحة العلوية للإكسل <br> >> Remove Duplicates << Expand the selection << Remove Duplicates... >> نقوم بتحديد عمود رقم الطلب بدون تكرار فقط >> Ok
+                    
+                    <div class="container">
+                        <img src="imgs/statistic-03.png" alt="from family details">
+                        <img src="imgs/statistic-04.png" alt="from family details">
+                    </div>
+
+                    <br>نحدث الصفحة ونملئ خلايا عمود العداد لمحازاة آخر رقم طلب مجاور
+                    <br>
+                    <br>يمكن التأكد من صحة رقم العداد من خلال تحديد جميع خلاياها بحيث تكون
+                    <br>Count في عداد = Count  في رقم الطلب بدون تكرار 
+                    <br>وSum في عداد = Count  في رقم الطلب مع تكرار
+
+                    <img src="imgs/statistic-05.png" alt="from family details">
+
+                    <br>مثال:
+                    <br>إذا أردنا أن نحسب عدد الذكور وعدد الإناث لكل أسرة 
+                    <br>بنفس الطريقة لكن نقوم بالفرز على الذكور في صفحة "للتوزيع" ونسخ أرقام طلباتهم في "عداد" لمعرفة عددهم 
+                    <br>ننسخ العدد ونحفظه في مكان آخر
+                    <br>ثم نقوم بنفس العملية مع الإناث
+                    <br>وممكن أن نفعله لجميعهم للحصول على العدد الكلي
+                </p>
+
+                <div class="container">
+                    
+                    إحصائية عدد الإثاث الموجودات بعمر 16 فما فوق
+                    <img src="imgs/statistic-07.jfif" alt="statistic">
+                    <img src="imgs/statistic-08.jfif" alt="statistic">
+
+                    تفصيل عدد الذكور والإناث لكل أسرة معنية
+                    <img src="imgs/statistic-09.jfif" alt="statistic">
+                </div>
+
+                
+            </div>
+
+        </div>
+
+        <button onclick="scrollToTop()" id="scrollToTopBtn">^</button>
+
+        <footer>
+            <img src="imgs/لوغو الجمعية مفرغ دقة عالية-01.png" />
+            <p>2024© جمعية البركة للتنمية الاجتماعية</p>
+            <p>للاستفسار التواصل على الرقم 0944068317</p>
+        </footer>
+        <script src="tasks.js"></script>
+    </body>
+
+    
+</html>
